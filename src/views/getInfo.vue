@@ -92,6 +92,13 @@ export default {
       status: []
     }
   },
+  mounted() {
+    api.get('/').then((res) => {
+      console.log('sucee', res)
+    }).catch((err) => {
+      console.log('err', err)
+    })
+  },
   methods: {
     copy(){
       const content = JSON.stringify(this.res)
