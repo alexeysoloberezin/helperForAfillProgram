@@ -93,7 +93,7 @@ export default {
     }
   },
   mounted() {
-    api.get('/').then((res) => {
+    api.get('/test').then((res) => {
       console.log('sucee', res)
     }).catch((err) => {
       console.log('err', err)
