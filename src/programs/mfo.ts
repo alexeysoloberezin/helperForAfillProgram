@@ -5,10 +5,10 @@ interface programProps {
     offersCards: any,
     name: string,
     logoImg: string,
+    decription: string[]
 }
 
-export const createProgramMfo = ({metaTitle, metaDescritpion, url, offersCards, name, logoImg}: programProps): object => {
-
+export const createProgramMfo = ({metaTitle, metaDescritpion, url, offersCards, name, logoImg, aboutDescription}: programProps): object => {
     return {
         name: name,
         type: "mfoOffer",
@@ -19,16 +19,16 @@ export const createProgramMfo = ({metaTitle, metaDescritpion, url, offersCards, 
         url: url,
         blocks: {
             intro: {
-                img: `require('images/affiliate-program/mfo/${logoImg}.webp')`,
+                img: `require('images/affiliate-program/mfo/${logoImg}_1.webp')`,
                 title: `Партнерские программы ${name}`,
                 description:
                     "Присоединяйтесь к партнерским программам МФО и получайте комиссионное вознаграждение за выданные микрозаймы",
             },
             aboutProgram: {
-                logoOnImg: `require('images/affiliate-program/mfo/${logoImg}.webp')`,
+                logoOnImg: `require('images/affiliate-program/mfo/${logoImg}_1.webp')`,
                 image: '',
                 title: url,
-                description: []
+                description: aboutDescription ? aboutDescription.split('\n').filter((item: any) => !!item) : []
             },
             offers: {
                 title:

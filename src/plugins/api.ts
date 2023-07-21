@@ -1,9 +1,8 @@
 import axios, { AxiosInstance } from 'axios';
 
 const api: AxiosInstance = axios.create({
-    baseURL: 'https://helperaffil-alexeysoloberezin.vercel.app/',
+    baseURL: 'http://localhost:1221',
 });
 
 export default api;
-
 
